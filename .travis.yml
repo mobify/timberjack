@@ -10,4 +10,3 @@ before_script:
 
 script:
     - tox -e ${TOX_ENV}
-    - rstcheck README.rst
