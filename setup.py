@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import sys
 
-from setuptools import setup
+from setuptools import setup, find_packages
 from setuptools.command.test import test as TestCommand
 
 requires = ['structlog']
@@ -44,7 +44,7 @@ setup(
     author="Sebastian Vetter",
     author_email="seb@mobify.com",
     url="https://timberjack.readthedocs.org",
-    packages=['timberjack'],
+    packages=find_packages(exclude=['tests']),
     install_requires=requires,
     classifiers=[
         'Development Status :: 1 - Planning',
