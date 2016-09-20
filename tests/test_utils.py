@@ -1,14 +1,14 @@
 import pytest
 
-from unittest.mock import Mock
-
 from timberjack import utils
+from timberjack.compat import mock
 
 
 def test_get_username_from_request_with_logged_in_user(rf):
     email = 'king_commerce@test.com'
 
-    user = Mock(username=email, is_authenticated=Mock(return_value=True))
+    user = mock.Mock(username=email,
+                     is_authenticated=mock.Mock(return_value=True))
     user.configure_mock(name='authenticated_user')
 
     request = rf.get('/')
@@ -20,7 +20,8 @@ def test_get_username_from_request_with_logged_in_user(rf):
 def test_get_username_from_request_with_anonymous_user(rf):
     email = 'king_commerce@test.com'
 
-    user = Mock(username=email, is_authenticated=Mock(return_value=False))
+    user = mock.Mock(username=email,
+                     is_authenticated=mock.Mock(return_value=False))
     user.configure_mock(name='logged_out_user')
 
     request = rf.get('/')
@@ -37,7 +38,7 @@ def test_get_username_from_request_without_user(rf):
 def test_get_client_ip_from_forwarded_header():
     ip_address = '123.111.222.333'
 
-    request = Mock()
+    request = mock.Mock()
     request.META = {'HTTP_X_FORWARDED_FOR': ip_address}
 
     assert utils.get_client_ip(request) == ip_address
@@ -47,7 +48,7 @@ def test_get_client_ip_from_forwarded_header():
     ('123.111.222.333',),
     ('123.111.222.333', '193.123.254.221')])
 def test_get_client_ip_from_remote_address(ip_addresses):
-    request = Mock()
+    request = mock.Mock()
     request.META = {'REMOTE_ADDR': ip_addresses[0]}
 
     assert utils.get_client_ip(request) == ip_addresses[0]

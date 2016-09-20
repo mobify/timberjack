@@ -17,7 +17,7 @@ tests_require = ['pytest',
 # We need to install mock for Python 2.x so we try to import it here and assume
 # we have to install if it raises an ImportError
 try:
-    import mock
+    from unittest import mock
 except ImportError:
     tests_require.append('mock')
 
