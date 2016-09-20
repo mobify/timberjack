@@ -1,3 +1,4 @@
+import logging
 import structlog
 
 from .processors import CensorSensitiveDataProcessor

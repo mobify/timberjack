@@ -9,6 +9,39 @@ timberjack
    :alt: Timberjack Tractor
 
 
+Install
+-------
+
+You can install ``timberjack`` directly from the Github repo using::
+
+    $ pip install https://github.com/mobify/timberjack/archive/master.zip
+
+
+Setup in Django
+---------------
+
+TBD.
+
+
+Setup in Flask
+--------------
+
+The timberjack logging tools come with a convenience class that allows the easy
+configuration of a Flask application to use logging::
+
+    from timberjack.contrib.flask import Timberjack
+
+    ...
+
+    app = Flask(__name__)
+    timberjack = Timberjack(app)
+
+    ...
+
+    log = timberjack.get_logger('my.logger')
+
+
+
 License
 -------
 
