@@ -14,6 +14,8 @@ tests_require = ['pytest',
                  'pytest-cov',
                  'rstcheck']
 
+dev_require = tests_require + ['bumpversion', 'twine']
+
 # We need to install mock for Python 2.x so we try to import it here and assume
 # we have to install if it raises an ImportError
 try:
@@ -58,5 +60,5 @@ setup(
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: Implementation :: CPython'],
-    extras_require={'test': tests_require},
+    extras_require={'test': tests_require, 'dev': dev_require},
     cmdclass={'test': PyTest})

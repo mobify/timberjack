@@ -1,5 +1,11 @@
 import structlog
 
+__title__ = 'timberjack'
+__author__ = 'Sebastian Vetter'
+__version__ = '0.0.0'
+__license__ = 'MIT'
+__copyright__ = 'Copyright 2016 Mobify Research & Development Inc.'
+
 
 def get_logger(name=None, *args, **kwargs):
     """
