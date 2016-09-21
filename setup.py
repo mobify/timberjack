@@ -39,7 +39,7 @@ class PyTest(TestCommand):
 
 setup(
     name="timberjack",
-    version='0.0.0',
+    version='0.1.0',
     description="Logging toolbox for Python services at Mobify.",
     long_description="\n\n".join([open("README.rst").read()]),
     license='MIT',
