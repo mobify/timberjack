@@ -16,11 +16,6 @@ class Timberjack(object):
 
         logging.basicConfig(level=level)
 
-        console = logging.handlers.StreamHandler()
-        console.setLevel(level)
-
-        logging.getLogger('').addHandler(console)
-
     @classmethod
     def get_logger(name=None, *args, **kwargs):
         return get_logger(name, *args, **kwargs)
