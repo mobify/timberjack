@@ -14,7 +14,7 @@ tests_require = ['pytest',
                  'pytest-cov',
                  'rstcheck']
 
-dev_require = tests_require + ['bumpversion', 'twine']
+dev_require = tests_require + ['bumpversion', 'twine', 'wheel']
 
 # We need to install mock for Python 2.x so we try to import it here and assume
 # we have to install if it raises an ImportError
